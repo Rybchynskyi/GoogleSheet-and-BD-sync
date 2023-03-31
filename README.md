@@ -1,3 +1,5 @@
+# About instructions, their usefulness, and usage
+
 Quite often, it is necessary to upload data from Google Sheets to the website database, and vice versa, from the database to Google Sheets.
 
 To achieve this purpose, we can use paid services. Because the table cannot be directly connected to the database.
@@ -10,15 +12,28 @@ In this repository, you can see both scripts and modify it to fit the needs of y
 ### Step 1: creating fetch request on Google sheet
 
 Create a Google Sheet and fill it with data:
-
-The first column, "Sync", is the checkout. Only marked data will be passed to the database via the API.
-For creating checkout:
-
+<p align="center">
+  <img src="https://github.com/Rybchynskyi/Images-for-readme/blob/main/GoogleSheet-and-BD-sync/GoogleSheet-and-BD-sync_1.png" width="600">
+</p>
+The first column, "Sync", is the checkbox. Only marked data will be passed to the database via the API.
+For creating checkbox:
+<p align="center">
+  <img src="https://github.com/Rybchynskyi/Images-for-readme/blob/main/GoogleSheet-and-BD-sync/GoogleSheet-and-BD-sync_2.png" width="600">
+</p>
 Create a script
+<p align="center">
+  <img src="https://github.com/Rybchynskyi/Images-for-readme/blob/main/GoogleSheet-and-BD-sync/GoogleSheet-and-BD-sync_3.png" width="600">
+</p>
 
 Assign the script to a button
+<p align="center">
+  <img src="https://github.com/Rybchynskyi/Images-for-readme/blob/main/GoogleSheet-and-BD-sync/GoogleSheet-and-BD-sync_4.png" width="600">
+  <img src="https://github.com/Rybchynskyi/Images-for-readme/blob/main/GoogleSheet-and-BD-sync/GoogleSheet-and-BD-sync_5.png" width="600">
+  <img src="https://github.com/Rybchynskyi/Images-for-readme/blob/main/GoogleSheet-and-BD-sync/GoogleSheet-and-BD-sync_6.png" width="600">
+  <img src="https://github.com/Rybchynskyi/Images-for-readme/blob/main/GoogleSheet-and-BD-sync/GoogleSheet-and-BD-sync_7.png" width="600">
+</p>
 
-Write the script (ready-made script in the repository, sheet_to_bd_script.js)
+Write the script (ready-made script in the repository, [sheet_to_bd_script.js](sheet_to_bd_script.js))
 
 Explanation of the main parts of the script:
 
@@ -84,7 +99,7 @@ jo = dataArray;
 ↗ The last action is to send the created object through a fetch request to your website's API.
 
 ### Step 2: Create website API:
-Create a page on the website that will receive your fetch request from Google script (ready-made script in the repository, sheet_to_bd_api.php)
+Create a page on the website that will receive your fetch request from Google script (ready-made script in the repository, [sheet_to_bd_api.php](sheet_to_bd_api.php))
 
 Explanation of the main parts of the script:
 ```php
@@ -133,7 +148,7 @@ That's it. The data from the table has been transferred to the database.
 ## Case 2: Transferring information from the database to Google Sheets.
 
 ### Step 1: Creating an API on the website
-Create a page on the website that will provide data from the database  (ready-made script in the repository, bd_to_sheet_api.php)
+Create a page on the website that will provide data from the database  (ready-made script in the repository, [bd_to_sheet_api.php](bd_to_sheet_api.php))
 
 Explanation of the main parts of the script:
 
@@ -172,7 +187,7 @@ echo json_encode($res);
 ### Step 2: Writing a script for Google Sheets.
 You can see the process of writing a script and assigning it to a button in Case 1.
 
-Write the script in Google sheet (ready-made script in the repository, bd_to_sheet_script.js)
+Write the script in Google sheet (ready-made script in the repository, [bd_to_sheet_script.js](bd_to_sheet_script.js))
 
 Explanation of the main parts of the script:
 ```javascript
